@@ -41,7 +41,7 @@
 <body>
 	<div id="container">
 		<div id="header">
-			<h1>Super cash partie administration</h1>
+			<h1 id="titre_accueil">Super cash partie administration</h1>
 		</div>
 		<div id="content">
 			

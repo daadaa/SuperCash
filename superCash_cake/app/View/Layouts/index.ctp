@@ -1,11 +1,12 @@
-<div>
-<div>
-bienvenu merci de vous connecter pouur acc�der au site :
-<div>	
+﻿<div>
+	<div class="msg_accueil" >
+		<marquee direction="left" scrollamount="8">bienvenue, merci de vous connecter pour accèder au site :</marquee>
+	</div>	
 	<div id="connexion">
-		login :
+		<?php echo $this->Form->create('Connect');?>
+		<span class="log"> login :</span><?php echo $this->Form->input('log',array('label' => false),'class'=>'input_log'); ?>
 		<br>
-		mot de passe :
+		<span class="log"> mot de passe : </span> <?php echo $this->Form->input('mdp',array('label' => false),'class'=>'input_log'); ?>
 		
 	</div>
 

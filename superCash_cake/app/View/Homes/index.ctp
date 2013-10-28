@@ -5,5 +5,5 @@
 
 ?>
 
-contenu ici barre recherche
+
 

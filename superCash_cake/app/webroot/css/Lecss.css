@@ -78,6 +78,31 @@ background:white;
 
 }
 
+.item-menu{
+width:24%;
+height:60px;
+border:1px groove;
+display:block;
+float:left;
+background:url(../img/fond-metal1.png);
+font-size:30px;
+font-weight:bold;
+font-variant: small-caps;
+}
+
+.cluster-item{
+position:absolute;
+top:18px;
+left:15px;
+width:100%;
+}
+
+.text-item{
+position:absolute;
+top:30%;
+margin-left:9%;
+}
+
 .log{
 font-size:40px;
 padding:10px;

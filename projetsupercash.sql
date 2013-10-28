@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: 127.0.0.1
--- Généré le: Mar 22 Octobre 2013 à 12:50
+-- Généré le: Lun 28 Octobre 2013 à 13:39
 -- Version du serveur: 5.6.12-log
 -- Version de PHP: 5.4.14
 
@@ -277,18 +277,20 @@ INSERT INTO `produits` (`id`, `prix_actuel`, `volume`, `nom`, `magasin_id`, `mar
 --
 
 CREATE TABLE IF NOT EXISTS `types` (
-  `idType` int(4) NOT NULL AUTO_INCREMENT,
+  `id` int(4) NOT NULL AUTO_INCREMENT,
   `nom` varchar(45) DEFAULT NULL,
-  `type_id` int(11) NOT NULL,
-  PRIMARY KEY (`idType`,`type_id`),
-  KEY `fk_Type_Type1_idx` (`type_id`)
+  `ref` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_Type_Type1_idx` (`ref`),
+  KEY `ref` (`ref`),
+  KEY `ref_2` (`ref`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Contenu de la table `types`
 --
 
-INSERT INTO `types` (`idType`, `nom`, `type_id`) VALUES
+INSERT INTO `types` (`id`, `nom`, `ref`) VALUES
 (1, 'Boissons', 0),
 (2, 'Aliments', 0),
 (3, 'Alcoolisés', 1),

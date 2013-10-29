@@ -1,7 +1,17 @@
+<?php echo $this->element('product_menu') ?>
+<table id="sub_menu">
+	<tr>
+		<td><?php echo $this->html->link("Ajout d'un produit",array('controller'=>'Produits','action'=>'ajout_produit')) ?></td>
+	</tr>
+</table>
+<hr/>
 <?php 
+	echo '<div id="product_search_bar">';
+	
 	echo $this->Form->create('Produit', array(
 		'inputDefaults' => array(
-			'label' => false
+			'label' => false, 
+			'div' => false
 			)
 		));
 	$optionTypes = $types;
@@ -9,23 +19,37 @@
         'options' => $optionTypes,
         'type' => 'select',
         'empty' => 'Choisir le type',
-        'label' => 'Type: '
+        'label' => 'Type: ',
+		'class' => 'search_bar_detail'
     	));
-	echo '</br>';
 	$optionMagasins = $magasins;
 	echo $this->Form->input('magasin_id', array(
         'options' => $optionMagasins,
         'type' => 'select',
         'empty' => 'Choisir le magasin',
-        'label' => 'Magasin: '
+        'label' => 'Magasin: ',
+		'class' => 'search_bar_detail'
     	));
+<<<<<<< HEAD
 	echo '</br>';
 	echo $this->Form->input('nom',array('label' => 'Nom: '));
 	echo '<br>';
+=======
+	echo $this->Form->input('nom',array('label' => 'Nom: ',
+		'class' => 'search_bar_detail'));
+>>>>>>> devChris
 
-	echo $this->Form->submit('Valider la recherche', array('class' => 'btn'));
+	echo $this->Form->submit('Valider la recherche', array('class' => 'btn',
+			'class' => 'search_bar_detail',
+			'div' => false));
 	echo $this->Form->end();
+<<<<<<< HEAD
 
+=======
+	echo '</div>';
+	
+	echo '<div class="product_table">';
+>>>>>>> devChris
 	App::import("Vendor","table");
 	if($produits){
 		$optionsproduits=$produits;
@@ -46,4 +70,8 @@
 		                               'You currently have no properties listed'
 		                               );
 	}
+<<<<<<< HEAD
+=======
+	echo '</div>';
+>>>>>>> devChris
 ?>

@@ -1,3 +1,10 @@
+<?php echo $this->element('product_menu') ?>
+<table id="sub_menu">
+	<tr>
+		<td><?php echo $this->html->link("Ajout d'un produit",array('controller'=>'Produits','action'=>'ajout_produit')) ?></td>
+	</tr>
+</table>
+<hr/>
 <?php 
 	echo $this->Form->create('Produit', array(
 		'inputDefaults' => array(
@@ -9,7 +16,7 @@
         'options' => $optionMarques,
         'type' => 'select',
         'empty' => 'Choisir la marque',
-        'label' => 'Marque: '
+        'label' => 'Marque : '
     	));
 
 	echo '</br>';
@@ -18,7 +25,7 @@
         'options' => $optionTypes,
         'type' => 'select',
         'empty' => 'Choisir le type',
-        'label' => 'Type: '
+        'label' => 'Type : '
     	));
 	echo '</br>';
 	$optionMagasins = $magasins;
@@ -26,19 +33,19 @@
         'options' => $optionMagasins,
         'type' => 'select',
         'empty' => 'Choisir le magasin',
-        'label' => 'Magasin: '
-    	));
+        'label' => 'Magasin : '
+    	)); 
 	echo '</br>';
 	echo $this->Form->input('nom', array(
-        'label' => 'Nom: '       
+        'label' => 'Nom : '       
     	));
 	echo '</br>';
 	echo $this->Form->input('volume', array(
-        'label' => 'Volume: '       
+        'label' => 'Volume : '       
     	));
 	echo '</br>';
 	echo $this->Form->input('prix_actuel', array(
-        'label' => 'Prix: '       
+        'label' => 'Prix : '       
     	));
 	echo '</br>';
 

@@ -17,14 +17,14 @@
 	</head>
 	<body>
 		<div id="container">
-			<div id="header">
-				<h1 class="titre_accueil"><u>SuperCash Admin<u></h1>
+			<div id="log_header">
+				<h1 class="titre_accueil"><u>SuperCash Admin</u></h1>
 			</div>
 			<div id="log_content">				
 				<?php echo $this->Session->flash(); 
 					  echo $this->fetch('content'); ?>
 			</div>
-			<div id="footer">
+			<div id="log_footer">
 				&copy 2013 - FHLM
 			</div>
 		</div>

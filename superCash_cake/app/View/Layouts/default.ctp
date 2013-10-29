@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>
-			SuperCash Admin
+			<?php echo $this->html->link('SuperCash Admin',array('controller'=>'Homes','action'=>'index')) ?>
 		</title>
 		
 		<?php
@@ -18,8 +18,9 @@
 	<body>
 		<div id="container">
 			<div id="header">
-				<h1 class="titre_header"><u>SuperCash Admin<u></h1>
+				<h1 class="titre_header"><u><?php echo $this->html->link('SuperCash Admin',array('controller'=>'Homes','action'=>'index')) ?></u></h1>
 			</div>
+			<?php echo $this->element('logout') ?>
 			<?php echo $this->element('menu') ?>
 			<div id="content">				
 				<?php echo $this->Session->flash(); 

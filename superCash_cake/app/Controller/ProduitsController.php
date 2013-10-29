@@ -3,6 +3,7 @@
 class ProduitsController extends AppController{
 	public $uses= array('Marque','Magasin','Type','Produit');
 
+<<<<<<< HEAD
 	public function edit_produit($id = null) {
 		$this->Produit->id = $id;
 
@@ -56,10 +57,70 @@ class ProduitsController extends AppController{
 					'Produit.nom LIKE' => '%'.$this->request->data['Produit']['nom'].'%'
 				),
 				'fields' => array('TypeJoin.*', 'Produit.*', 'MagasinJoin.*', 'MarqueJoin.*'),
+=======
+	public function index() {
+		
+	}
+	
+	public function edit_produit($id = null) {
+		$this->Produit->id = $id;
+	
+		if ($this->request->is('get')) {
+			$this->request->data = $this->Produit->read();
+			$types = $this->Type->find('list', array(
+					'fields' => array('nom')
+			));
+			$this->set('types', $types);
+				
+			$marques = $this->Marque->find('list', array(
+					'fields' => array('nom')
+			));
+			$this->set('marques', $marques);
+	
+			$magasins = $this->Magasin->find('list', array(
+					'fields' => array('ville')
+			));
+			$this->set('magasins', $magasins);
+	
+			$produits = $this->Produit->find('all', array(
+					'joins' => array(
+							array(
+									'table' => 'types',
+									'alias' => 'TypeJoin',
+									'type' => 'INNER',
+									'conditions' => array(
+											'TypeJoin.id = Produit.type_id'
+									)
+							),
+							array(
+									'table' => 'magasins',
+									'alias' => 'MagasinJoin',
+									'type' => 'INNER',
+									'conditions' => array(
+											'MagasinJoin.id = Produit.magasin_id'
+									)
+							),
+							array(
+									'table' => 'marques',
+									'alias' => 'MarqueJoin',
+									'type' => 'INNER',
+									'conditions' => array(
+											'MarqueJoin.id = Produit.marque_id'
+									)
+							),
+					),
+					'conditions' => array(
+							'TypeJoin.id' => $this->request->data['Produit']['type_id'],
+							'MagasinJoin.id' =>  $this->request->data['Produit']['magasin_id'],
+							'Produit.nom LIKE' => '%'.$this->request->data['Produit']['nom'].'%'
+					),
+					'fields' => array('TypeJoin.*', 'Produit.*', 'MagasinJoin.*', 'MarqueJoin.*'),
+>>>>>>> devChris
 			));
 	
 		} else {
 			if ($this->Produit->save($this->request->data)) {
+<<<<<<< HEAD
 				$this->Session->setFlash('Votre Produit a Ã©tÃ© mis Ã  jour.');
 				$this->redirect(array('action' => 'search_product'));
 			} else {
@@ -68,6 +129,15 @@ class ProduitsController extends AppController{
 		}
 	}
 	
+=======
+				$this->Session->setFlash('Votre Produit a été mis à jour.');
+				$this->redirect(array('action' => 'search_product'));
+			} else {
+				$this->Session->setFlash('Impossible de mettre à jour votre actualité');
+			}
+		}
+	}
+>>>>>>> devChris
 	public function search_product(){
 		$types = $this->Type->find('list', array(
 			'fields' => array('nom')
@@ -80,6 +150,7 @@ class ProduitsController extends AppController{
 		$this->set('magasins', $magasins);
 		$this->set('produits',null);
 		if ($this->request->is('post')) {
+<<<<<<< HEAD
 			if($this->request->data['Produit']['type_id'] == '' && $this->request->data['Produit']['magasin_id'] == ''){
 				$test = $this->Produit->find('all', array(
 				    'joins' => array(
@@ -214,6 +285,42 @@ class ProduitsController extends AppController{
 				    'fields' => array('TypeJoin.*', 'Produit.*', 'MagasinJoin.*', 'MarqueJoin.*'),
 				));
 			}
+=======
+			$test = $this->Produit->find('all', array(
+			    'joins' => array(
+			        array(
+			            'table' => 'types',
+			            'alias' => 'TypeJoin',
+			            'type' => 'INNER',
+			            'conditions' => array(
+			                'TypeJoin.id = Produit.type_id'
+			            )
+			        ),
+			        array(
+			        	'table' => 'magasins',
+			            'alias' => 'MagasinJoin',
+			            'type' => 'INNER',
+			            'conditions' => array(
+			                'MagasinJoin.id = Produit.magasin_id'
+			            )
+			        ),
+			        array(
+			        	'table' => 'marques',
+			            'alias' => 'MarqueJoin',
+			            'type' => 'INNER',
+			            'conditions' => array(
+			                'MarqueJoin.id = Produit.marque_id'
+			            )
+			        ),
+			    ),
+			    'conditions' => array(
+			        'TypeJoin.id' => $this->request->data['Produit']['type_id'],
+			        'MagasinJoin.id' =>  $this->request->data['Produit']['magasin_id'],
+			        'Produit.nom LIKE' => '%'.$this->request->data['Produit']['nom'].'%'
+			    ),
+			    'fields' => array('TypeJoin.*', 'Produit.*', 'MagasinJoin.*', 'MarqueJoin.*'),
+			));
+>>>>>>> devChris
 			$this->set('produits',$test);
 		}
 	}

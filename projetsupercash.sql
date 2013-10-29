@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.8.1
+-- version 3.3.9
 -- http://www.phpmyadmin.net
 --
--- Client: 127.0.0.1
--- Généré le: Mar 29 Octobre 2013 à 11:33
--- Version du serveur: 5.6.12-log
--- Version de PHP: 5.4.14
+-- Serveur: localhost
+-- Généré le : Mar 29 Octobre 2013 à 11:13
+-- Version du serveur: 5.1.36
+-- Version de PHP: 5.3.5
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -260,7 +259,7 @@ CREATE TABLE IF NOT EXISTS `produits` (
   KEY `fk_Produit_Magasin_idx` (`magasin_id`),
   KEY `fk_Produit_Marque1_idx` (`marque_id`),
   KEY `fk_Produit_Type1_idx` (`type_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Contenu de la table `produits`
@@ -268,8 +267,8 @@ CREATE TABLE IF NOT EXISTS `produits` (
 
 INSERT INTO `produits` (`id`, `prix_actuel`, `volume`, `nom`, `magasin_id`, `marque_id`, `type_id`) VALUES
 (1, 1, 50, 'coca', 1, 1, 4),
-(2, 2.1, 100, 'Kohler', 2, 2, 5),
-(3, 1, 50, 'fanta', 4, 1, 4);
+(3, 1, 50, 'fanta', 4, 1, 4),
+(6, 2, 200, 'Kohler', 1, 2, 5);
 
 -- --------------------------------------------------------
 
@@ -299,6 +298,25 @@ INSERT INTO `types` (`id`, `nom`, `ref`) VALUES
 (5, 'Biscuits Sucres', 2),
 (6, 'Biscuits Sales', 2);
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(255) NOT NULL,
+  `prenom` varchar(255) NOT NULL,
+  `loggin` varchar(255) NOT NULL,
+  `mdp` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Contenu de la table `users`
+--
+
+INSERT INTO `users` (`id`, `nom`, `prenom`, `loggin`, `mdp`) VALUES
+(1, 'test', 'test', 'test', 'test'),
+(2, 'test1', 'test1', 'test1', 'test1');

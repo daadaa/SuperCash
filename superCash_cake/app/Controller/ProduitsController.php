@@ -80,40 +80,140 @@ class ProduitsController extends AppController{
 		$this->set('magasins', $magasins);
 		$this->set('produits',null);
 		if ($this->request->is('post')) {
-			$test = $this->Produit->find('all', array(
-			    'joins' => array(
-			        array(
-			            'table' => 'types',
-			            'alias' => 'TypeJoin',
-			            'type' => 'INNER',
-			            'conditions' => array(
-			                'TypeJoin.id = Produit.type_id'
-			            )
-			        ),
-			        array(
-			        	'table' => 'magasins',
-			            'alias' => 'MagasinJoin',
-			            'type' => 'INNER',
-			            'conditions' => array(
-			                'MagasinJoin.id = Produit.magasin_id'
-			            )
-			        ),
-			        array(
-			        	'table' => 'marques',
-			            'alias' => 'MarqueJoin',
-			            'type' => 'INNER',
-			            'conditions' => array(
-			                'MarqueJoin.id = Produit.marque_id'
-			            )
-			        ),
-			    ),
-			    'conditions' => array(
-			        'TypeJoin.id' => $this->request->data['Produit']['type_id'],
-			        'MagasinJoin.id' =>  $this->request->data['Produit']['magasin_id'],
-			        'Produit.nom LIKE' => '%'.$this->request->data['Produit']['nom'].'%'
-			    ),
-			    'fields' => array('TypeJoin.*', 'Produit.*', 'MagasinJoin.*', 'MarqueJoin.*'),
-			));
+			if($this->request->data['Produit']['type_id'] == '' && $this->request->data['Produit']['magasin_id'] == ''){
+				$test = $this->Produit->find('all', array(
+				    'joins' => array(
+				        array(
+				            'table' => 'types',
+				            'alias' => 'TypeJoin',
+				            'type' => 'INNER',
+				            'conditions' => array(
+				                'TypeJoin.id = Produit.type_id'
+				            )
+				        ),
+				        array(
+				        	'table' => 'magasins',
+				            'alias' => 'MagasinJoin',
+				            'type' => 'INNER',
+				            'conditions' => array(
+				                'MagasinJoin.id = Produit.magasin_id'
+				            )
+				        ),
+				        array(
+				        	'table' => 'marques',
+				            'alias' => 'MarqueJoin',
+				            'type' => 'INNER',
+				            'conditions' => array(
+				                'MarqueJoin.id = Produit.marque_id'
+				            )
+				        ),
+				    ),
+				    'fields' => array('TypeJoin.*', 'Produit.*', 'MagasinJoin.*', 'MarqueJoin.*'),
+				));
+			}else if($this->request->data['Produit']['type_id'] == '' && $this->request->data['Produit']['magasin_id'] != ''){
+				$test = $this->Produit->find('all', array(
+				    'joins' => array(
+				        array(
+				            'table' => 'types',
+				            'alias' => 'TypeJoin',
+				            'type' => 'INNER',
+				            'conditions' => array(
+				                'TypeJoin.id = Produit.type_id'
+				            )
+				        ),
+				        array(
+				        	'table' => 'magasins',
+				            'alias' => 'MagasinJoin',
+				            'type' => 'INNER',
+				            'conditions' => array(
+				                'MagasinJoin.id = Produit.magasin_id'
+				            )
+				        ),
+				        array(
+				        	'table' => 'marques',
+				            'alias' => 'MarqueJoin',
+				            'type' => 'INNER',
+				            'conditions' => array(
+				                'MarqueJoin.id = Produit.marque_id'
+				            )
+				        ),
+				    ),
+				    'conditions' => array(
+				        'MagasinJoin.id' =>  $this->request->data['Produit']['magasin_id'],
+				        'Produit.nom LIKE' => '%'.$this->request->data['Produit']['nom'].'%'
+				    ),
+				    'fields' => array('TypeJoin.*', 'Produit.*', 'MagasinJoin.*', 'MarqueJoin.*'),
+				));
+			}else if($this->request->data['Produit']['type_id'] != '' && $this->request->data['Produit']['magasin_id'] == ''){
+				$test = $this->Produit->find('all', array(
+				    'joins' => array(
+				        array(
+				            'table' => 'types',
+				            'alias' => 'TypeJoin',
+				            'type' => 'INNER',
+				            'conditions' => array(
+				                'TypeJoin.id = Produit.type_id'
+				            )
+				        ),
+				        array(
+				        	'table' => 'magasins',
+				            'alias' => 'MagasinJoin',
+				            'type' => 'INNER',
+				            'conditions' => array(
+				                'MagasinJoin.id = Produit.magasin_id'
+				            )
+				        ),
+				        array(
+				        	'table' => 'marques',
+				            'alias' => 'MarqueJoin',
+				            'type' => 'INNER',
+				            'conditions' => array(
+				                'MarqueJoin.id = Produit.marque_id'
+				            )
+				        ),
+				    ),
+				    'conditions' => array(
+				        'TypeJoin.id' => $this->request->data['Produit']['type_id'],
+				        'Produit.nom LIKE' => '%'.$this->request->data['Produit']['nom'].'%'
+				    ),
+				    'fields' => array('TypeJoin.*', 'Produit.*', 'MagasinJoin.*', 'MarqueJoin.*'),
+				));
+			}else{
+				$test = $this->Produit->find('all', array(
+				    'joins' => array(
+				        array(
+				            'table' => 'types',
+				            'alias' => 'TypeJoin',
+				            'type' => 'INNER',
+				            'conditions' => array(
+				                'TypeJoin.id = Produit.type_id'
+				            )
+				        ),
+				        array(
+				        	'table' => 'magasins',
+				            'alias' => 'MagasinJoin',
+				            'type' => 'INNER',
+				            'conditions' => array(
+				                'MagasinJoin.id = Produit.magasin_id'
+				            )
+				        ),
+				        array(
+				        	'table' => 'marques',
+				            'alias' => 'MarqueJoin',
+				            'type' => 'INNER',
+				            'conditions' => array(
+				                'MarqueJoin.id = Produit.marque_id'
+				            )
+				        ),
+				    ),
+				    'conditions' => array(
+				        'TypeJoin.id' => $this->request->data['Produit']['type_id'],
+				        'MagasinJoin.id' => $this->request->data['Produit']['magasin_id'],
+				        'Produit.nom LIKE' => '%'.$this->request->data['Produit']['nom'].'%'
+				    ),
+				    'fields' => array('TypeJoin.*', 'Produit.*', 'MagasinJoin.*', 'MarqueJoin.*'),
+				));
+			}
 			$this->set('produits',$test);
 		}
 	}

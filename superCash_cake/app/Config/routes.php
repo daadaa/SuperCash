@@ -31,6 +31,7 @@
  * ...and connect the rest of 'Pages' controller's urls.
  */
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
+	Router::connect('/produits/suppr_produit/:id',array('controller'=> 'produits','action'=>'suppr_produit'), array('pass'=>array('id'),'id'=>'[0-9]+'));
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on

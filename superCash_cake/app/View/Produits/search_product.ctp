@@ -30,6 +30,8 @@
 	if($produits){
 		$optionsproduits=$produits;
 		$displayFields = array('Nom' => 'Produit.nom',
+								'Volume' => 'Produit.volume',
+								'Prix' => 'Produit.prix_actuel',
 								'Type' => 'TypeJoin.nom',
 								'Marque' => 'MarqueJoin.nom',
 								'Magasin' => 'MagasinJoin.ville');

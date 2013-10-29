@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,6 +26,14 @@
 	<div id="connexion">
 	<div id="connexion_text">
 		<?php echo $this->Form->create('Connect', array('controller'=> 'connect', 'action'=>'index'));?>
+=======
+<div id="msg_accueil" >
+	<marquee direction="left" scrollamount="8">bienvenue, merci de vous connecter pour accèder au site :</marquee>
+</div>	
+<div id="connexion">
+	
+		<?php echo $this->Form->create('Connect', array('controller'=> 'logs', 'action'=>'index'));?>
+>>>>>>> devChris
 		<table class="table_connexion">
 		<tr>
 			<td><span class="log"> login :</span></td>
@@ -36,9 +45,13 @@
 		</tr>
 		<tr><td><?php echo $this->Form->end("connexion",array('class'=>'sub_connexion'));//echo $this->Form->submit('Connexion', array('class'=>'sub_connexion'));?></td></tr>
 		</table>
+<<<<<<< HEAD
 	</div>	
 	</div>
 
 </div>
 </body>
 </head>
+=======
+</div>
+>>>>>>> devChris

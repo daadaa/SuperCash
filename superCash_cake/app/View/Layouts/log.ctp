@@ -18,10 +18,9 @@
 	<body>
 		<div id="container">
 			<div id="header">
-				<h1 class="titre_header"><u>SuperCash Admin<u></h1>
+				<h1 class="titre_accueil"><u>SuperCash Admin<u></h1>
 			</div>
-			<?php echo $this->element('menu') ?>
-			<div id="content">				
+			<div id="log_content">				
 				<?php echo $this->Session->flash(); 
 					  echo $this->fetch('content'); ?>
 			</div>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: 127.0.0.1
--- Généré le: Lun 28 Octobre 2013 à 13:39
+-- Généré le: Mar 29 Octobre 2013 à 11:33
 -- Version du serveur: 5.6.12-log
 -- Version de PHP: 5.4.14
 
@@ -260,7 +260,7 @@ CREATE TABLE IF NOT EXISTS `produits` (
   KEY `fk_Produit_Magasin_idx` (`magasin_id`),
   KEY `fk_Produit_Marque1_idx` (`marque_id`),
   KEY `fk_Produit_Type1_idx` (`type_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Contenu de la table `produits`
@@ -268,7 +268,8 @@ CREATE TABLE IF NOT EXISTS `produits` (
 
 INSERT INTO `produits` (`id`, `prix_actuel`, `volume`, `nom`, `magasin_id`, `marque_id`, `type_id`) VALUES
 (1, 1, 50, 'coca', 1, 1, 4),
-(2, 2.1, 100, 'Kohler', 2, 2, 5);
+(2, 2.1, 100, 'Kohler', 2, 2, 5),
+(3, 1, 50, 'fanta', 4, 1, 4);
 
 -- --------------------------------------------------------
 
@@ -293,10 +294,10 @@ CREATE TABLE IF NOT EXISTS `types` (
 INSERT INTO `types` (`id`, `nom`, `ref`) VALUES
 (1, 'Boissons', 0),
 (2, 'Aliments', 0),
-(3, 'Alcoolisés', 1),
-(4, 'Non alcoolisés', 1),
-(5, 'Biscuits Sucrés', 2),
-(6, 'Biscuits Salés', 2);
+(3, 'Alcoolises', 1),
+(4, 'Non alcoolises', 1),
+(5, 'Biscuits Sucres', 2),
+(6, 'Biscuits Sales', 2);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -1,15 +1,30 @@
 body{
 	width: 100%;
-	height: 960px;
-
-	background-repeat: no-repeat;
-	background-image: linear-gradient(bottom, rgb(255,255,255) 20%, rgb(230,213,187) 60%, rgb(222,153,69) 80%);
-	background-image: -o-linear-gradient(bottom, rgb(255,255,255) 20%, rgb(230,213,187) 60%, rgb(222,153,69) 80%);
-	background-image: -moz-linear-gradient(bottom, rgb(255,255,255) 20%, rgb(230,213,187) 60%, rgb(222,153,69) 80%);
-	background-image: -webkit-linear-gradient(bottom, rgb(255,255,255) 20%, rgb(230,213,187) 60%, rgb(222,153,69) 80%);
-	background-image: -ms-linear-gradient(bottom, rgb(255,255,255) 20%, rgb(230,213,187) 60%, rgb(222,153,69) 80%);
+	height: 1000px;
 	
-	background-image: -webkit-gradient(
+background-image: linear-gradient(top, rgb(255,255,255) 0%, rgb(0,73,168) 79%, rgb(0,8,166) 100%);
+background-image: -o-linear-gradient(top, rgb(255,255,255) 0%, rgb(0,73,168) 79%, rgb(0,8,166) 100%);
+background-image: -moz-linear-gradient(top, rgb(255,255,255) 0%, rgb(0,73,168) 79%, rgb(0,8,166) 100%);
+background-image: -webkit-linear-gradient(top, rgb(255,255,255) 0%, rgb(0,73,168) 79%, rgb(0,8,166) 100%);
+background-image: -ms-linear-gradient(top, rgb(255,255,255) 0%, rgb(0,73,168) 79%, rgb(0,8,166) 100%);
+
+background-image: -webkit-gradient(
+	linear,
+	left top,
+	left bottom,
+	color-stop(0, rgb(255,255,255)),
+	color-stop(0.79, rgb(0,73,168)),
+	color-stop(1, rgb(0,8,166))
+);
+
+	_background-repeat: no-repeat;
+	_background-image: linear-gradient(bottom, rgb(255,255,255) 20%, rgb(230,213,187) 60%, rgb(222,153,69) 80%);
+	_background-image: -o-linear-gradient(bottom, rgb(255,255,255) 20%, rgb(230,213,187) 60%, rgb(222,153,69) 80%);
+	_background-image: -moz-linear-gradient(bottom, rgb(255,255,255) 20%, rgb(230,213,187) 60%, rgb(222,153,69) 80%);
+	_background-image: -webkit-linear-gradient(bottom, rgb(255,255,255) 20%, rgb(230,213,187) 60%, rgb(222,153,69) 80%);
+	_background-image: -ms-linear-gradient(bottom, rgb(255,255,255) 20%, rgb(230,213,187) 60%, rgb(222,153,69) 80%);
+	
+	_background-image: -webkit-gradient(
 		linear,
 		left bottom,
 		left top,
@@ -17,100 +32,153 @@ body{
 		color-stop(0.6, rgb(230,213,187)),
 		color-stop(0.8, rgb(222,153,69))
 	);
+	
 	font-family: Bookman Old Style
 
 }
 
 #container{
-	//position: absolute;
+	_position: absolute;
 	margin: auto;
-	//top: 5%;
-	//left: 5%;
 	width: 1280px;
 	height: 960px;
-	background-image:url(../img/fond-bois2.jpg);
+	_background-image:url(../img/fond-bois2.jpg);
 	
-	box-shadow: -2px -1px 5px 2px #4251b3;
-	border-radius:	25px 25px 25px 25px;
+	_box-shadow: -2px -1px 5px 2px #4251b3;
+	_border-radius:	25px 25px 25px 25px;
 }
 
 #header {
-	//position: absolute;
+	position: relative;
+	width: 78%;
+	height: 8%;
+	top: 1%;
+	_border: 2px solid black;
+	text-align: center;
+}
+#log_header {
+	_position: relative;
 	width: 100%;
 	height: 8%;
 	top: 1%;
 	border: 2px solid black;
+	text-align: center;
+}
+
+#logout{
+	position: relative;
+	width: 21%;
+	height: 8%;
+	left: 79%;
+	top: -8%;
+	_border: 2px solid black;
+	border-radius: 10px;
+	margin-top: 8px;
+	padding: 1px;
+	background-color: green;
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
 }
 
 #menu{
-	//position: absolute;
-	top: 10%;
+	position: relative;
+	top: -6%;
 	margin: auto;
+	_margin-bottom: 2px;
 	padding: 10px 0px 0px 40px;
-	left:10%;
+	_left:10%;
 	width:80%;
 	height: 8%;
-	box-shadow: -2px 10px 5px 0px black;
-	border-radius: 25px 25px 25px 25px;
-	//background:white;
+	_box-shadow: -2px 10px 5px 0px black;
+	_border-radius: 25px 25px 25px 25px;
+	_background:white;
 }
 
 #content {
-	//position: absolute;
+	position: relative;
+	top: -5%;
 	width: 100%;
-	height: 74%;
+	height: 70%;
 	margin: 1% 0% 1% 0%;
-	//top: 26%;	
-	border: 2px solid black;	
+	_top: 26%;	
+	_border: 5px solid black;
+	border-radius: 10px;	
+	text-align: center;
 }
 
 #log_content {
 	//position: absolute;
 	width: 100%;
 	height: 85%;
-	top: 10%;	
+	_top: 15%;	
 	border: 2px solid black;	
 }
 #footer {
-	//position: absolute;
+	position: relative;
+	width: 100%;
+	height: 4%;
+	top: -5%;
+	padding-top: 5px;
+	border: 2px solid black;
+	border-radius: 10px;
+	text-align: center;
+	background-color: black;
+	color: white;
+}
+
+#log_footer {
+	_position: relative;
 	width: 100%;
 	height: 5%;
-	//bottom: 1%;
+	top: -5%;
 	border: 2px solid black;
+	text-align: center;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+a:visited {
+	color: gray;	
 }
 
 .titre_header{
-	//position :absolute;
-	//left:0%;
-//	top:-2.7%;
-	//top:20%;
-	//left:5%;
-	//width : 100%;
-	//height : 80px; 	
-	//background-image:url(../img/fond-bois2.jpg);
-	//_box-shadow: -2px -1px 5px 0px #4251b3;
-	//border-radius:25px 25px 25px 0px;
 	text-align: center;
 }
 
 
 .cluster-item{
-	//position:absolute;
-//	top:10px;
-	//left:15px;
+	_position:absolute;
+	_top:10px;
+	_left:15px;
 	margin: auto;
 	width:100%;
+	border-radius: 5px;
 }
+
 .item-menu{
 	width:24%;
 	height:60px;
-	border:1px groove;
+	_border:1px groove;
+	_border-radius: 5px;
 	display:block;
 	float:left;
-	background:url(../img/fond-metal1.png);
+	background-color: blue;
+	_background:url(../img/fond-metal1.png);
 	font-size:30px;
 	font-weight:bold;
 	font-variant: small-caps;
+	text-align: center;
+}
+
+.item-menu:hover{
+	//position:absolute;
+	//top:30%;
+	//margin-left:9%;
+	background-color: white;
 }
 
 .text-item{
@@ -119,63 +187,128 @@ body{
 	margin-left:9%;
 }
 
-#connexion{
+#box_msg_accueil {
+	position :relative;
+	left: 10%;
+	top: 30%;
+	width: 80%;
+	height: 10%;
+	_border: 2px solid black;
+	border-radius: 10px;
+	font-size: 40px;
+	font-weight: bold;
+	font-variant: small-caps;
+	background-color: black;
+	color: white;
+}
+
+#box_connexion{
 	position: relative;
-	//right:10%;
 	top:40%;
 	left: 50%;
-	//bottom:20%;
 	width: 40%;
-	height :150px;
+	height: 120px;
 	box-shadow: -2px 10px 5px 0px black;
 	border-radius:25px 25px 25px 25px;
 	background-image:url(../img/fond-pierre.jpg);
+	text-align: center;
 }
 
-#connexion_text{
+/*#connexion_text{
 	position:absolute;
 	top : 20px;
 	left:20px;
 	width:90%;
 }
+*/
 
-.log{
-	font-size:40px;
+.text_connexion{
+	font-size:30px;
 	padding:10px;
 	font-family: Bookman Old Style;
 	width:100%
 }
 
-#msg_accueil {
-	position :relative;
-	left:10%;
-	top:30%;
-	width:80%;
-	height: 10%;
-	border: 2px solid black;
-	font-size:40px;
+#box_connexion table {
+	position : absolute;
+	width:100%;
+}
+
+.input_connexion{
+	box-shadow: -2px -1px 5px 0px #4251b3;
+	width:200px;
+	height:30px;
+	font-size:20px;
 	font-weight:bold;
 	font-variant: small-caps;
 }
 
-.table_connexion{
-position : absolute;
-width:100%;
-}
-.input_log{
-box-shadow: -2px -1px 5px 0px #4251b3;
-width:200px;
-height:30px;
-font-size:20px;
-font-weight:bold;
-font-variant: small-caps;
+.submit_connexion{
+	width:200px;
+	height:30px;
+	font-size:20px;
+	font-weight:bold;
+	font-variant: small-caps;
 }
 
-.sub_connexion{
-width:200px;
-height:30px;
-font-size:20px;
-font-weight:bold;
-font-variant: small-caps;
+#sub_menu {
+	position: relative;
+	margin: auto;
+	margin-top: 10px;
+	_border: 2px solid black;
+	height: 50px;
+}
 
+#sub_menu td {
+	_border: 2px solid black;
+	_border-radius: 5px;
+	background-color: blue;
+	padding: 10px;
+}
+
+#sub_menu td a{
+	_border: 2px solid black;
+	_border-radius: 5px;
+	color: white;
+}
+#sub_menu td:hover {
+	_border: 2px solid black;
+	background-color: white;
+}
+
+#sub_menu td a:hover {
+	_border: 2px solid black;
+	color: black;
+}
+
+#content hr{
+	width: 80%;
+	border: 2px solid white;
+}
+
+#product_search_bar {
+	position: relative;
+	width: 90%;
+	margin: auto;
+	_left: 10%;
+	_border: 2px solid black;
+	text-align: center;
+}
+
+.search_bar_detail {
+	width: 150px;
+	margin: 5px; 
+}
+
+.product_table{
+	width: 70%;
+	margin: auto;
+}
+
+.product_table table {
+	width: 100%;
+}
+
+.product_table th {
+	background-color: blue;
 }

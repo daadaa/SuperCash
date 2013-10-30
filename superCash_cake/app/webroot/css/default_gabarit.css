@@ -1,0 +1,339 @@
+body{
+	width: 100%;
+	height: 1000px;
+	
+	
+background: rgba(27,33,36,1);
+background: -moz-linear-gradient(left, rgba(27,33,36,1) 0%, rgba(49,64,224,1) 51%, rgba(29,32,33,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(27,33,36,1)), color-stop(51%, rgba(49,64,224,1)), color-stop(100%, rgba(29,32,33,1)));
+background: -webkit-linear-gradient(left, rgba(27,33,36,1) 0%, rgba(49,64,224,1) 51%, rgba(29,32,33,1) 100%);
+background: -o-linear-gradient(left, rgba(27,33,36,1) 0%, rgba(49,64,224,1) 51%, rgba(29,32,33,1) 100%);
+background: -ms-linear-gradient(left, rgba(27,33,36,1) 0%, rgba(49,64,224,1) 51%, rgba(29,32,33,1) 100%);
+background: linear-gradient(to right, rgba(27,33,36,1) 0%, rgba(49,64,224,1) 51%, rgba(29,32,33,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1b2124', endColorstr='#1d2021', GradientType=1 );
+	
+_background-image: linear-gradient(top, rgb(255,255,255) 0%, rgb(0,73,168) 79%, rgb(0,8,166) 100%);
+_background-image: -o-linear-gradient(top, rgb(255,255,255) 0%, rgb(0,73,168) 79%, rgb(0,8,166) 100%);
+_background-image: -moz-linear-gradient(top, rgb(255,255,255) 0%, rgb(0,73,168) 79%, rgb(0,8,166) 100%);
+_background-image: -webkit-linear-gradient(top, rgb(255,255,255) 0%, rgb(0,73,168) 79%, rgb(0,8,166) 100%);
+_background-image: -ms-linear-gradient(top, rgb(255,255,255) 0%, rgb(0,73,168) 79%, rgb(0,8,166) 100%);
+
+_background-image: -webkit-gradient(
+	linear,
+	left top,
+	left bottom,
+	color-stop(0, rgb(255,255,255)),
+	color-stop(0.79, rgb(0,73,168)),
+	color-stop(1, rgb(0,8,166))
+);
+
+	_background-repeat: no-repeat;
+	_background-image: linear-gradient(bottom, rgb(255,255,255) 20%, rgb(230,213,187) 60%, rgb(222,153,69) 80%);
+	_background-image: -o-linear-gradient(bottom, rgb(255,255,255) 20%, rgb(230,213,187) 60%, rgb(222,153,69) 80%);
+	_background-image: -moz-linear-gradient(bottom, rgb(255,255,255) 20%, rgb(230,213,187) 60%, rgb(222,153,69) 80%);
+	_background-image: -webkit-linear-gradient(bottom, rgb(255,255,255) 20%, rgb(230,213,187) 60%, rgb(222,153,69) 80%);
+	_background-image: -ms-linear-gradient(bottom, rgb(255,255,255) 20%, rgb(230,213,187) 60%, rgb(222,153,69) 80%);
+	
+	_background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.2, rgb(255,255,255)),
+		color-stop(0.6, rgb(230,213,187)),
+		color-stop(0.8, rgb(222,153,69))
+	);
+	
+	font-family: Bookman Old Style
+
+}
+
+#container{
+	_position: absolute;
+	margin: auto;
+	width: 1280px;
+	height: 960px;
+	_background-image:url(../img/fond-bois2.jpg);
+	
+	_box-shadow: -2px -1px 5px 2px #4251b3;
+	_border-radius:	25px 25px 25px 25px;
+}
+
+#header {
+	position: relative;
+	width: 78%;
+	height: 8%;
+	top: 1%;
+	_border: 2px solid black;
+	text-align: center;
+}
+
+#log_header {
+	_position: relative;
+	width: 100%;
+	height: 8%;
+	top: 1%;
+	_border: 2px solid black;
+	text-align: center;
+}
+
+#logout{
+	position: relative;
+	width: 21%;
+	height: 8%;
+	left: 79%;
+	top: -8%;
+	_border: 2px solid black;
+	border-radius: 10px;
+	margin-top: 8px;
+	padding: 1px;
+	background-color: green;
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+#menu{
+	position: relative;
+	top: -6%;
+	margin: auto;
+	_margin-bottom: 2px;
+	_padding: 10px 0px 0px 40px;
+	_left:10%;
+	width:80%;
+	height: 8%;
+	_box-shadow: -2px 10px 5px 0px black;
+	_border: 2px solid black;
+	_border-radius: 25px 25px 25px 25px;
+	_background:white;
+}
+
+#content {
+	position: relative;
+	top: -4%;
+	width: 100%;
+	height: 70%;
+	margin: 1% 0% 1% 0%;
+	_top: 26%;	
+	_border: 5px solid black;
+	border-radius: 50px;
+	_background-color: white;	
+	text-align: center;
+}
+
+#log_content {
+	//position: absolute;
+	width: 100%;
+	height: 85%;
+	_top: 15%;	
+	_border: 2px solid black;	
+}
+#footer {
+	position: relative;
+	width: 100%;
+	height: 4%;
+	top: -5%;
+	padding-top: 5px;
+	border: 2px solid black;
+	border-radius: 10px;
+	text-align: center;
+	background-color: black;
+	color: white;
+}
+
+#log_footer {
+	_position: relative;
+	width: 100%;
+	height: 5%;
+	top: -5%;
+	border: 2px solid black;
+	border-radius: 10px;
+	text-align: center;
+	background-color: black;
+	color: white;
+
+}
+
+a {
+	color: gray;
+	text-decoration: none;
+}
+
+a:visited {
+	color: gray;	
+}
+
+.titre_header{
+	text-align: center;
+	font-size: 44px;
+}
+
+
+.menu_table{
+	position: absolute;
+	top: -1%;
+	_left:15px;
+	_margin: auto;
+	_padding: 10px;
+	width:100%;
+	border-radius: 5px;
+}
+
+.menu_table td{
+	_width:24%;
+	height: 60px;
+	_border:1px groove;
+	_border-radius: 5px;
+	_display:block;
+	_float:left;
+	background-color: black;
+	_background:url(../img/fond-metal1.png);
+	font-size: 34px;
+	font-weight:bold;
+	font-variant: small-caps;
+	text-align: center;
+}
+
+.menu_table td:hover{
+	_position:absolute;
+	_top:30%;
+	_margin-left:9%;
+	background-color: white;
+}
+
+#box_msg_accueil {
+	position :relative;
+	left: 10%;
+	top: 30%;
+	width: 80%;
+	height: 10%;
+	_border: 2px solid black;
+	border-radius: 10px;
+	font-size: 40px;
+	font-weight: bold;
+	font-variant: small-caps;
+	background-color: black;
+	color: white;
+}
+
+#box_connexion{
+	position: relative;
+	top:40%;
+	left: 50%;
+	width: 40%;
+	height: 120px;
+	box-shadow: -2px 10px 5px 0px black;
+	border-radius:25px 25px 25px 25px;
+	background-image:url(../img/fond-pierre.jpg);
+	text-align: center;
+}
+
+/*#connexion_text{
+	position:absolute;
+	top : 20px;
+	left:20px;
+	width:90%;
+}
+*/
+
+.text_connexion{
+	font-size:30px;
+	padding:10px;
+	font-family: Bookman Old Style;
+	width:100%
+}
+
+#box_connexion table {
+	position : absolute;
+	width:100%;
+}
+
+.input_connexion{
+	box-shadow: -2px -1px 5px 0px #4251b3;
+	width:200px;
+	height:30px;
+	font-size:20px;
+	font-weight:bold;
+	font-variant: small-caps;
+}
+
+.submit_connexion{
+	width:200px;
+	height:30px;
+	font-size:20px;
+	font-weight:bold;
+	font-variant: small-caps;
+}
+
+#sub_menu {
+	position: relative;
+	margin: auto;
+	margin-top: 10px;
+	_border: 2px solid black;
+	height: 50px;
+}
+
+#sub_menu td {
+	_border: 2px solid black;
+	_border-radius: 5px;
+	background-color: black;
+	padding: 10px;
+	font-size: 18px;
+	font-weight:bold;
+	font-variant: small-caps;
+}
+
+#sub_menu td a{
+	_border: 2px solid black;
+	_border-radius: 5px;
+	_color: white;
+}
+#sub_menu td:hover {
+	_border: 2px solid black;
+	background-color: blue;
+}
+
+#sub_menu td a:hover {
+	_border: 2px solid black;
+	_color: black;
+}
+
+#content hr{
+	width: 80%;
+	border: 2px solid white;
+}
+
+#product_search_bar {
+	position: relative;
+	width: 90%;
+	margin: auto;
+	_left: 10%;
+	_border: 2px solid black;
+	text-align: center;
+}
+
+.search_bar_detail {
+	width: 150px;
+	margin: 5px; 
+}
+
+.product_table{
+	width: 70%;
+	margin: auto;
+}
+
+.product_table table {
+	width: 100%;
+}
+
+.product_table th {
+	height: 30px;
+	font-variant: small-caps;
+	font-size: 16px;
+	color: white;
+	background-color: black;
+}
+
+.product_table td {
+	color: white;
+	height: 25px;
+}

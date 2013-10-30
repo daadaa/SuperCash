@@ -1,9 +1,6 @@
 <!--page accueil après connexion-->
-<?php
 
-	echo $this->element('menu')
-
-?>
+Bienvenue sur la page d'accueil
 
 
 

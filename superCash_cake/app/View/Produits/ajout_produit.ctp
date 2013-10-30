@@ -1,0 +1,54 @@
+<?php echo $this->element('product_menu') ?>
+<table id="sub_menu">
+	<tr>
+		<td><?php echo $this->html->link("Ajout d'un produit",array('controller'=>'Produits','action'=>'ajout_produit')) ?></td>
+	</tr>
+</table>
+<hr/>
+<?php 
+	echo $this->Form->create('Produit', array(
+		'inputDefaults' => array(
+			'label' => false
+			)
+		));
+	$optionMarques = $marques;
+	echo $this->Form->input('marque_id', array(
+        'options' => $optionMarques,
+        'type' => 'select',
+        'empty' => 'Choisir la marque',
+        'label' => 'Marque : '
+    	));
+
+	echo '</br>';
+	$optionTypes = $types;
+	echo $this->Form->input('type_id', array(
+        'options' => $optionTypes,
+        'type' => 'select',
+        'empty' => 'Choisir le type',
+        'label' => 'Type : '
+    	));
+	echo '</br>';
+	$optionMagasins = $magasins;
+	echo $this->Form->input('magasin_id', array(
+        'options' => $optionMagasins,
+        'type' => 'select',
+        'empty' => 'Choisir le magasin',
+        'label' => 'Magasin : '
+    	)); 
+	echo '</br>';
+	echo $this->Form->input('nom', array(
+        'label' => 'Nom : '       
+    	));
+	echo '</br>';
+	echo $this->Form->input('volume', array(
+        'label' => 'Volume : '       
+    	));
+	echo '</br>';
+	echo $this->Form->input('prix_actuel', array(
+        'label' => 'Prix : '       
+    	));
+	echo '</br>';
+
+	echo $this->Form->submit('Valider la recherche', array('class' => 'btn'));
+	echo $this->Form->end();
+?>

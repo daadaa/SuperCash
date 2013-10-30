@@ -1,5 +1,11 @@
+<?php echo $this->element('product_menu') ?>
 
-<h1>Editer le type</h1>
+<table id="sub_menu">
+	<tr>
+		<td><?php echo $this->html->link("Ajout d'un type",array('controller'=>'Types','action'=>'ajout_type')) ?></td>
+	</tr>
+</table>
+<hr/>
 
 <?php
 		 
@@ -8,7 +14,8 @@
 			'label' => false
 			)
 	));
-	echo $this->Form->input('nom', array('label'=>"nom"));
+	echo $this->Form->input('nom', array('label'=>"Nom : "));
+	echo '</br>';
 	echo $this->Form->end('Modifier');
 	
 ?>

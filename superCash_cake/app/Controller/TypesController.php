@@ -1,20 +1,6 @@
 <?php
 	class TypesController extends AppController{
-		public function array_union_recursive($array1, $array2)
-		{
-		    foreach ($array2 as $key => $value)
-		    {
-		        if(is_array($value))
-		        {
-		            $array1[$key] = array_union_recursive($array1[$key], $array2[$key]);
-		        }
-		        else
-		        {
-		            $array1[$key] = $value;
-		        }
-		    }
-		    return $array1;
-		}
+		
 		public function index(){
 			$types_parent = $this->Type->find('all',array(
 					'conditions' => array('ref' => '0')
@@ -33,8 +19,9 @@
 				'fields' => array('TypeJoin.*', 'Type.*'),
 			));
 			$types = array_merge($types_parent, $types);
+			//debug($types);
 			foreach ($types as $key => $value) {
-				if($types[$key]['Type']['ref'] == 0) $types[$key]['Type']['ref'] = 'Pas de parent';
+				if($types[$key]['Type']['ref'] == 0) $types[$key]['Type']['ref'] = 'Pas de parent / Orphelin';
 				$nb = count($types[$key]);
 				if($nb == 2){
 					$types[$key]['Type']['ref'] = $value['TypeJoin']['nom'];

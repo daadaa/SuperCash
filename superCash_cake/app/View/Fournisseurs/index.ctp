@@ -20,8 +20,8 @@ App::import("Vendor","table");
 
 	echo '<div class="product_table">';
 
-	$actions = array('Supprimer' => array('/fournisseurs/delete_fournisseur/', 'id'),
-	                 'Modifier' => array('/fournisseurs/edit_fournisseur/', 'id'));
+	$actions = array('Delete' => array('/fournisseurs/delete_fournisseur/', 'id'),
+	                 'Edit' => array('/fournisseurs/edit_fournisseur/', 'id'));
 	 
 	echo $this->Table->createTable('Fournisseur',
 	                               $optionsfournisseurs,

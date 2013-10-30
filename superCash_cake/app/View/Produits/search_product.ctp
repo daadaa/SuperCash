@@ -31,7 +31,6 @@
 		'class' => 'search_bar_detail'
     	));
 
-	echo '</br>';
 	echo $this->Form->input('nom',array('label' => 'Nom: ',
 		'class' => 'search_bar_detail'));
 

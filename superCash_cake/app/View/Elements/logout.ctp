@@ -1,3 +1,5 @@
 <div id="logout">
-	<?php echo $this->html->link('Se deconnecter', array('controller' => 'logouts', 'action' => 'index')); ?>
+	M.<?php  echo $this->Session->read('membre');
+	?>
+	<br><?php echo $this->html->link('Se deconnecter', array('controller' => 'logouts', 'action' => 'index')); ?>
 </div>

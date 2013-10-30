@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 3.3.9
+-- version 3.5.8.1
 -- http://www.phpmyadmin.net
 --
--- Serveur: localhost
--- Généré le : Mar 29 Octobre 2013 à 11:13
--- Version du serveur: 5.1.36
--- Version de PHP: 5.3.5
+-- Client: 127.0.0.1
+-- Généré le: Mer 30 Octobre 2013 à 19:01
+-- Version du serveur: 5.6.12-log
+-- Version de PHP: 5.4.14
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -131,15 +132,14 @@ CREATE TABLE IF NOT EXISTS `factures_fournisseurs` (
   `date` date DEFAULT NULL,
   `fournisseur_id` int(11) NOT NULL,
   PRIMARY KEY (`id`,`fournisseur_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
 -- Contenu de la table `factures_fournisseurs`
 --
 
 INSERT INTO `factures_fournisseurs` (`id`, `prix_total`, `date`, `fournisseur_id`) VALUES
-(1, '698', '2013-10-08', 1),
-(1, '439', '2013-10-01', 2);
+(1, '698', '2013-10-08', 1);
 
 -- --------------------------------------------------------
 
@@ -156,7 +156,7 @@ CREATE TABLE IF NOT EXISTS `fournisseurs` (
   `mail` varchar(45) NOT NULL,
   `telephone` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Contenu de la table `fournisseurs`
@@ -164,7 +164,8 @@ CREATE TABLE IF NOT EXISTS `fournisseurs` (
 
 INSERT INTO `fournisseurs` (`id`, `nom`, `adresse`, `ville`, `CP`, `mail`, `telephone`) VALUES
 (1, 'Distri Sarl', '78 rue Piton Des Neiges', 'Cilaos', '97413', 'distri.sarl@mail.fr', '0692591526'),
-(2, 'Royal Bourbon', '56 Chemin Des Papangues', 'Saint Gilles', '97434', 'royal.bour@gmail.com', '0693450012');
+(5, 'entreprise1', '78 rue entreprise1', 'Sainte-Clotilde', '97490', 'entreprise1@gmail.com', '0262589634'),
+(6, 'entreprise2', '25 avenue entreprise2', 'Sainte-Clotilde', '97490', 'entreprise2@gmail.com', '0262348569');
 
 -- --------------------------------------------------------
 
@@ -184,7 +185,7 @@ CREATE TABLE IF NOT EXISTS `lots` (
   PRIMARY KEY (`id`,`produit_id`,`factures_fournisseur_id`),
   KEY `fk_Lot_Produit1_idx` (`produit_id`),
   KEY `fk_Lot_Facture_fournisseur1_idx` (`factures_fournisseur_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
 
 --
 -- Contenu de la table `lots`
@@ -192,7 +193,9 @@ CREATE TABLE IF NOT EXISTS `lots` (
 
 INSERT INTO `lots` (`id`, `reference`, `format`, `quantite_pack`, `date_arrive`, `prix_unitaire_achat`, `produit_id`, `factures_fournisseur_id`) VALUES
 (1, 'RN61807', 24, 30, '2013-10-02', 0.75, 0, 0),
-(2, 'RN60837', 24, 30, '2013-10-02', 0.73, 0, 0);
+(2, 'RN60837', 24, 30, '2013-10-02', 0.73, 0, 0),
+(24, 'test2', 12, 1, '2013-10-30', 2, 6, 10),
+(25, 'test3', 24, 2, '2013-10-30', 2, 1, 10);
 
 -- --------------------------------------------------------
 
@@ -231,7 +234,7 @@ CREATE TABLE IF NOT EXISTS `marques` (
   `id` int(3) NOT NULL AUTO_INCREMENT,
   `nom` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Contenu de la table `marques`
@@ -255,6 +258,7 @@ CREATE TABLE IF NOT EXISTS `produits` (
   `magasin_id` int(11) NOT NULL,
   `marque_id` int(11) NOT NULL,
   `type_id` int(11) NOT NULL,
+  `quantite` int(5) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`,`magasin_id`,`marque_id`,`type_id`),
   KEY `fk_Produit_Magasin_idx` (`magasin_id`),
   KEY `fk_Produit_Marque1_idx` (`marque_id`),
@@ -265,10 +269,10 @@ CREATE TABLE IF NOT EXISTS `produits` (
 -- Contenu de la table `produits`
 --
 
-INSERT INTO `produits` (`id`, `prix_actuel`, `volume`, `nom`, `magasin_id`, `marque_id`, `type_id`) VALUES
-(1, 1, 50, 'coca', 1, 1, 4),
-(3, 1, 50, 'fanta', 4, 1, 4),
-(6, 2, 200, 'Kohler', 1, 2, 5);
+INSERT INTO `produits` (`id`, `prix_actuel`, `volume`, `nom`, `magasin_id`, `marque_id`, `type_id`, `quantite`) VALUES
+(1, 1, 50, 'coca', 1, 1, 4, 48),
+(3, 1, 33, 'fanta', 4, 1, 4, 0),
+(6, 2, 200, 'Kohler', 1, 2, 5, 12);
 
 -- --------------------------------------------------------
 
@@ -284,7 +288,7 @@ CREATE TABLE IF NOT EXISTS `types` (
   KEY `fk_Type_Type1_idx` (`ref`),
   KEY `ref` (`ref`),
   KEY `ref_2` (`ref`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
 -- Contenu de la table `types`
@@ -293,10 +297,11 @@ CREATE TABLE IF NOT EXISTS `types` (
 INSERT INTO `types` (`id`, `nom`, `ref`) VALUES
 (1, 'Boissons', 0),
 (2, 'Aliments', 0),
-(3, 'Alcoolises', 1),
 (4, 'Non alcoolises', 1),
 (5, 'Biscuits Sucres', 2),
-(6, 'Biscuits Sales', 2);
+(6, 'Biscuits Sales', 2),
+(7, 'test', 0),
+(8, 'Alcoolises', 1);
 
 -- --------------------------------------------------------
 
@@ -306,17 +311,21 @@ INSERT INTO `types` (`id`, `nom`, `ref`) VALUES
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nom` varchar(255) NOT NULL,
-  `prenom` varchar(255) NOT NULL,
-  `loggin` varchar(255) NOT NULL,
+  `login` varchar(255) NOT NULL,
   `mdp` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Contenu de la table `users`
 --
 
-INSERT INTO `users` (`id`, `nom`, `prenom`, `loggin`, `mdp`) VALUES
-(1, 'test', 'test', 'test', 'test'),
-(2, 'test1', 'test1', 'test1', 'test1');
+INSERT INTO `users` (`id`, `login`, `mdp`) VALUES
+(1, 'test', 'test'),
+(2, 'test1', 'test1'),
+(3, 'test3', 'test3'),
+(4, 'test4', 'test3');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

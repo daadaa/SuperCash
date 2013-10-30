@@ -16,7 +16,7 @@ App::import("Vendor","table");
 	echo '<div class="product_table">';
 
 	$actions = array('Supprimer' => array('/clients/delete_client/', 'id'),
-	                 'Detail' => array('/clients/detail_fournisseur/', 'id'));
+	                 'Detail' => array('/clients/detail_client/', 'id'));
 	 
 	echo $this->Table->createTable('Client',
 	                               $optionsfournisseurs,

@@ -18,7 +18,7 @@
 	<body>
 		<div id="container">
 			<div id="header">
-				<h1 class="titre_header"><u><?php echo $this->html->link('SuperCash Admin',array('controller'=>'Homes','action'=>'index')) ?></u></h1>
+				<h1 class="titre_header"><?php echo $this->html->link('SuperCash Admin',array('controller'=>'Homes','action'=>'index')) ?></h1>
 			</div>
 			<?php echo $this->element('logout') ?>
 			<?php echo $this->element('menu') ?>

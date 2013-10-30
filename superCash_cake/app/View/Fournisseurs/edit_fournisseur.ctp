@@ -1,8 +1,9 @@
-﻿<!-- Fichier: /app/View/Actualites/edit.ctp -->
-
-<div class="page-header">
-
-<h1>Editer le fournisseur</h1>
+﻿<table id="sub_menu">
+	<tr>
+		<td><?php echo $this->html->link("Ajout d'un Fournisseur",array('controller'=>'Fournisseurs','action'=>'ajout_fournisseur')) ?></td>
+	</tr>
+</table>
+<hr/>
 
 <?php
 		 
@@ -13,12 +14,18 @@
 	));
 		
 		
-		echo $this->Form->input('nom', array('label'=>"nom"));
-		echo $this->Form->input('adresse', array('label'=>"prix"));
-		echo $this->Form->input('ville', array('label'=>"volume"));
-		echo $this->Form->input('CP', array('label' => 'CP'));
-		echo $this->Form->input('mail', array('label' => 'mail'));
-		echo $this->Form->input('telephone', array('label' => 'telephone'));
+		echo $this->Form->input('nom', array('label'=>"Nom : "));
+		echo '</br>';
+		echo $this->Form->input('adresse', array('label'=>"Adresse : "));
+		echo '</br>';
+		echo $this->Form->input('ville', array('label'=>"Ville : "));
+		echo '</br>';
+		echo $this->Form->input('CP', array('label' => 'CP : '));
+		echo '</br>';
+		echo $this->Form->input('mail', array('label' => 'Mail : '));
+		echo '</br>';
+		echo $this->Form->input('telephone', array('label' => 'Telephone : '));
+		echo '</br>';
 		echo $this->Form->input('id', array('label' => 'hidden'));
 	echo $this->Form->end('Modifier');
 	

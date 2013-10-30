@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 <table id="sub_menu">
 	<tr>
 		<td><?php echo $this->html->link("Ajout d'un Fournisseur",array('controller'=>'Fournisseurs','action'=>'ajout_fournisseur')) ?></td>
@@ -7,7 +5,6 @@
 </table>
 <hr/>
 
->>>>>>> devChris
 <?php
 
 App::import("Vendor","table");
@@ -19,14 +16,10 @@ App::import("Vendor","table");
 							'mail' => 'mail',
 							'telephone' => 'telephone',
 							);
-<<<<<<< HEAD
-	echo $this->Html->link('Ajouter un fournisseur', array('controller' => 'fournisseurs', 'action' => 'ajout_fournisseur')); 
-	 
-=======
-	//echo $this->Html->link('Ajouter un fournisseur', array('controller' => 'fournisseurs', 'action' => 'ajout_fournisseur')); 
-	
+
+
 	echo '<div class="product_table">';
->>>>>>> devChris
+
 	$actions = array('Supprimer' => array('/fournisseurs/delete_fournisseur/', 'id'),
 	                 'Modifier' => array('/fournisseurs/edit_fournisseur/', 'id'));
 	 
@@ -36,9 +29,7 @@ App::import("Vendor","table");
 	                               $actions,
 	                               'You currently have no properties listed'
 	                               );
-<<<<<<< HEAD
 
-=======
 	echo '</div>'
->>>>>>> devChris
+
 ?>

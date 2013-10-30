@@ -12,6 +12,7 @@ class LoginsController extends AppController {
 						'conditions'=> array('User.username'=>$this->request->data['logins']['log']),
 						'fields'=> array('User.id')
 					));
+					
 					$id = $id['User']['id'];
 					
 					$log = $this->User->find('first',array(
@@ -19,11 +20,15 @@ class LoginsController extends AppController {
 						)
 					);
 					$mdp = $this->User->find('first',array(
-						'conditions'=> array('User.password'=>$this->request->data['logins']['password'])
+						'conditions'=> array(
+							'User.password'=>$this->request->data['logins']['password'],
+							'User.username'=>$this->request->data['logins']['log']
+							)
 						)
 					);
 					
 					if($log && $mdp){
+						$this->Session->write('membre',$this->request->data['logins']['log']);
 						$this->redirect(array('controller'=>'homes','action'=>'index/'.$id));
 					}
 					else{
@@ -37,6 +42,7 @@ class LoginsController extends AppController {
 				$this->redirect(array('controller'=>'logs','action'=>'index'));
 			}
 		}
+		
 		
 	
 	}

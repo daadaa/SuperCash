@@ -18,7 +18,7 @@
 	<body>
 		<div id="container">
 			<div id="log_header">
-				<h1 class="titre_accueil"><u>SuperCash Admin</u></h1>
+				<h1 class="titre_header">SuperCash Admin</h1>
 			</div>
 			<div id="log_content">				
 				<?php echo $this->Session->flash(); 

@@ -1,3 +1,9 @@
+<table id="sub_menu">
+	<tr>
+		<td><?php echo $this->html->link("Ajout d'un Fournisseur",array('controller'=>'Fournisseurs','action'=>'ajout_fournisseur')) ?></td>
+	</tr>
+</table>
+<hr/>
 <?php 
 	echo $this->Form->create('Fournisseur', array(
 		'inputDefaults' => array(

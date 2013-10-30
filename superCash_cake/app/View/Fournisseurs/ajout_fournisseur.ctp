@@ -1,3 +1,10 @@
+<table id="sub_menu">
+	<tr>
+		<td><?php echo $this->html->link("Ajout d'un Fournisseur",array('controller'=>'Fournisseurs','action'=>'ajout_fournisseur')) ?></td>
+	</tr>
+</table>
+<hr/>
+
 <?php 
 	echo $this->Form->create('Fournisseur', array(
 		'inputDefaults' => array(
@@ -6,27 +13,27 @@
 		));
 	
 	echo $this->Form->input('nom', array(
-        'label' => 'Nom: '       
+        'label' => 'Nom : '       
     	));
 	echo '</br>';
 	echo $this->Form->input('adresse', array(
-        'label' => 'adresse: '       
+        'label' => 'Adresse : '       
     	));
 	echo '</br>';
 	echo $this->Form->input('ville', array(
-        'label' => 'ville: '       
+        'label' => 'Ville : '       
     	));
 	echo '</br>';
 	echo $this->Form->input('CP', array(
-        'label' => 'CP: '       
+        'label' => 'CP : '       
     	));
 	echo '</br>';
 	echo $this->Form->input('mail', array(
-        'label' => 'mail: '       
+        'label' => 'Mail : '       
     	));
 	echo '</br>';
 	echo $this->Form->input('telephone', array(
-        'label' => 'telephone: '       
+        'label' => 'Telephone : '       
     	));
 	echo '</br>';
 

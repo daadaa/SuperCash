@@ -5,7 +5,7 @@
 
 <table id="sub_menu">
 	<tr>
-		<td><?php echo $this->html->link("Ajout d'une marque",array('controller'=>'Marques','action'=>'add_marque')) ?></td>
+		<td><?php echo $this->html->link("Ajout d'une marque",array('controller'=>'Marques','action'=>'ajout_marque')) ?></td>
 	</tr>
 </table>
 <hr/>

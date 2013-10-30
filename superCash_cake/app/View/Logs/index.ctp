@@ -3,7 +3,7 @@
 </div>	
 <div id="box_connexion">
 	
-		<?php echo $this->Form->create('Connect', array('controller'=> 'logs', 'action'=>'index'));?>
+		<?php echo $this->Form->create('Login', array('controller'=> 'logins', 'action'=>'login'));?>
 		<table>
 			<tr>
 				<td><span class="text_connexion"> Login :</span></td>

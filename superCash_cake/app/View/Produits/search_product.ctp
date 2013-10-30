@@ -30,26 +30,20 @@
         'label' => 'Magasin: ',
 		'class' => 'search_bar_detail'
     	));
-<<<<<<< HEAD
+
 	echo '</br>';
-	echo $this->Form->input('nom',array('label' => 'Nom: '));
-	echo '<br>';
-=======
 	echo $this->Form->input('nom',array('label' => 'Nom: ',
 		'class' => 'search_bar_detail'));
->>>>>>> devChris
 
 	echo $this->Form->submit('Valider la recherche', array('class' => 'btn',
 			'class' => 'search_bar_detail',
 			'div' => false));
 	echo $this->Form->end();
-<<<<<<< HEAD
 
-=======
 	echo '</div>';
 	
 	echo '<div class="product_table">';
->>>>>>> devChris
+
 	App::import("Vendor","table");
 	if($produits){
 		$optionsproduits=$produits;
@@ -70,8 +64,7 @@
 		                               'You currently have no properties listed'
 		                               );
 	}
-<<<<<<< HEAD
-=======
+
 	echo '</div>';
 >>>>>>> devChris
 ?>

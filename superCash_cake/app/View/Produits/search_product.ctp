@@ -66,5 +66,4 @@
 	}
 
 	echo '</div>';
->>>>>>> devChris
 ?>

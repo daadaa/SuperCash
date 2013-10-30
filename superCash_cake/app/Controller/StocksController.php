@@ -2,6 +2,9 @@
 
 class StocksController extends AppController{
 	public $uses = array('Magasin','Fournisseur', 'Lot', 'Factures_fournisseur','Produit');
+	function index() {
+		
+	}
 	function ajout_facture(){
 		$fournisseurs = $this->Fournisseur->find('list',array(
 			'fields' => array('nom')

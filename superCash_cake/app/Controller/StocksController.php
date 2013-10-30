@@ -2,8 +2,28 @@
 
 class StocksController extends AppController{
 	public $uses = array('Magasin','Fournisseur', 'Lot', 'Factures_fournisseur','Produit');
-	function index() {
-		
+
+	function index($id=null) {
+		$factures = $this->Factures_fournisseur->find('all', array(
+				    'joins' => array(
+				        array(
+				            'table' => 'fournisseurs',
+				            'alias' => 'FournisseurJoin',
+				            'type' => 'INNER',
+				            'conditions' => array(
+				                'FournisseurJoin.id = Factures_fournisseur.fournisseur_id'
+				            )
+				        ),
+				    ),
+				    'fields' => array('FournisseurJoin.*', 'Factures_fournisseur.*')
+				));
+		$this->set('factures', $factures);
+		if(isset($id)){
+			$lots = $this->Lot->find('all',array(
+			'conditions' => array('factures_fournisseur_id' => $id),
+			));
+			$this->set('lots',$lots);
+		}
 	}
 	function ajout_facture(){
 		$fournisseurs = $this->Fournisseur->find('list',array(
